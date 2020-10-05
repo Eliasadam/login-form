@@ -7,7 +7,7 @@ import {
   Input,
   Text,
   LogoutButtons,
-  ErrorMessage
+  ErrorMessage,
 } from "./Styling";
 import signInReducer from "./utils/signInReducer";
 import { login } from "./utils/login";
@@ -84,12 +84,8 @@ const SignInUseReducer = () => {
               }
             />
 
-            <Buttons
-              className="submit"
-              type="submit"
-              disabled={!(password !== "" && password !== "") && isLoading}
-            >
-              {isLoading ? "siging in..." : <>Login</>}
+            <Buttons className="submit" type="submit" disabled={isLoading}>
+              {isLoading ? "signing in..." : "Login"}
             </Buttons>
           </Form>
         </LoginContainer>

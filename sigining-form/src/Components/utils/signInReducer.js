@@ -7,7 +7,7 @@ const signInReducer = (state, action) => {
           [action.fieldName]: action.payload,
         };
       }
-      case 'signUp': {
+      case 'login': {
         return {
           ...state,
           error: '',

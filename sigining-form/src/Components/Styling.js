@@ -43,7 +43,6 @@ align-content: center;
 align-items: center;
 justify-content: center;
 flex-direction: column;
-
 `;
 
 export const Form = styled.form`
@@ -77,7 +76,7 @@ margin: 1rem 0;
 height: 2.5rem;
 padding-left: 0.5rem;
 `;
-export const Row = styled.div`
+export const SearchForm = styled.form`
 flex-direction: row;
 justify-contents: center;
 align-items: center;
