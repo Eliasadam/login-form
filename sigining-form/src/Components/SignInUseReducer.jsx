@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import {
-  Wrapppers,
+  Wrapper,
   LoginContainer,
   Form,
   Buttons,
@@ -8,6 +8,9 @@ import {
   Text,
   LogoutButtons,
   ErrorMessage,
+  Header,
+  LoginTitle,
+  Container
 } from "./Styling";
 import signInReducer from "./utils/signInReducer";
 import { login } from "./utils/login";
@@ -40,18 +43,21 @@ const SignInUseReducer = () => {
   const { email, password, isLoading, error, isSignedUp } = state;
 
   return (
-    <Wrapppers>
+    <Wrapper>
       {isSignedUp ? (
-        <>
-          <LogoutButtons
-            color="primary"
-            onClick={() => dispatch({ type: "logOut" })}
-          >
-            Log Out
-          </LogoutButtons>
-          <h1>Welcome!</h1>
+        <Container>
+          <Header>
+          <LoginTitle>Welcome!</LoginTitle>
+            <LogoutButtons
+              color="primary"
+              onClick={() => dispatch({ type: "logOut" })}
+            >
+              Log Out
+            </LogoutButtons>
+           
+          </Header>
           <SearchFilter />
-        </>
+        </Container>
       ) : (
         <LoginContainer>
           <Text>My Form application</Text>
@@ -90,7 +96,7 @@ const SignInUseReducer = () => {
           </Form>
         </LoginContainer>
       )}
-    </Wrapppers>
+    </Wrapper>
   );
 };
 
