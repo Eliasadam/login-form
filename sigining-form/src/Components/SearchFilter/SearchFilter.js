@@ -8,11 +8,6 @@ const apiData = "https://jsonplaceholder.typicode.com/photos?_start=0&_limit=200
 const SearchFilter = () => {
   const [search, setSearch] = useState("");
   const { error, response, isLoading } = useFetch(apiData);
-
-  const resetInputField = () => {
-    setSearch("");
-  };
-
  
   const updateSearch = response
     ? response.filter((item) => item.title.toLowerCase().includes(search))
